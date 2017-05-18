@@ -14,17 +14,18 @@ public class Movement : MonoBehaviour {
 	}
 
 	void Update() {
-		foreach (Touch touch in Input.touches) {
-			print (touch.position);
-			if (touch.phase != TouchPhase.Ended) {
-				if (touch.position.x > 800) {
+		if (Input.GetKey ("space")) {
+			RotateClockwise ();
+		}
+		if (Input.touchCount > 0) {
+			while (Input.GetTouch (Input.touches.Length - 1).phase != TouchPhase.Ended) {
+				if (Input.GetTouch (Input.touches.Length - 1).position.x > 750) {
 					RotateClockwise ();
-				} else if (touch.position.x < 800) {
+				} else {
 					RotateCClockwise ();
 				}
 			}
 		}
-
 	}
 
 	void RotateClockwise () {
@@ -32,12 +33,14 @@ public class Movement : MonoBehaviour {
 
 		Vector2 offset = new Vector2 (Mathf.Sin(angle), Mathf.Cos(angle)) * radius;
 		transform.position = center + offset;
+		print ("RotatingClockwise " + angle);
 	}
 
 	void RotateCClockwise() {
-		angle += speed * Time.deltaTime;
+		angle += speed * Time.deltaTime * -1;
 
 		Vector2 offset = new Vector2 (Mathf.Sin(angle), Mathf.Cos(angle)) * radius;
 		transform.position = center + offset;
+		print ("RotatingClockwise " + angle);
 	}
 }
