@@ -18,12 +18,10 @@ public class Movement : MonoBehaviour {
 			RotateClockwise ();
 		}
 		if (Input.touchCount > 0) {
-			while (Input.GetTouch (Input.touches.Length - 1).phase != TouchPhase.Ended) {
-				if (Input.GetTouch (Input.touches.Length - 1).position.x > 750) {
-					RotateClockwise ();
-				} else {
-					RotateCClockwise ();
-				}
+			if (Input.GetTouch (Input.touches.Length - 1).position.x > 750) {
+				RotateClockwise ();
+			} else {
+				RotateCClockwise ();
 			}
 		}
 	}
