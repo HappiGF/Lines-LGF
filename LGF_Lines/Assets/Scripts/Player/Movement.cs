@@ -14,16 +14,17 @@ public class Movement : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetKey ("space")) {
+		if (Input.GetKey ("space") || Input.touchCount > 0) {
 			RotateClockwise ();
 		}
-		if (Input.touchCount > 0) {
+		/*if (Input.touchCount > 0) {
 			if (Input.GetTouch (Input.touches.Length - 1).position.x > 750) {
 				RotateClockwise ();
 			} else {
 				RotateCClockwise ();
 			}
-		}
+		}*/
+
 	}
 
 	void RotateClockwise () {
