@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/Death.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Player/Movement.cs" Line="26" Column="6" />
+      <File FileName="Assets/Scripts/Lines/Spawner.cs" Line="11" Column="16" />
+      <File FileName="Assets/Scripts/Lines/LineFormer.cs" Line="20" Column="25" />
+      <File FileName="Assets/Scripts/Player/Death.cs" Line="8" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
