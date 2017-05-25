@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LineManager : MonoBehaviour {
 
 	public float lineHeight;
 	private float speed;
+    private int score;
 
 	void Start() {
 		speed = GameObject.Find ("SpawnManager").GetComponent<Spawner>().speed;
@@ -23,18 +25,22 @@ public class LineManager : MonoBehaviour {
 			lineHeight = Random.Range (0.5f, 1.9f);
 		}
 
-		this.gameObject.transform.localScale = new Vector3 (0.1f, lineHeight, 1f);
+		gameObject.transform.localScale = new Vector3 (0.1f, lineHeight, 1f);
 	}
 
 	void Update() {
-		this.gameObject.transform.Translate (Vector3.down * Time.deltaTime * speed);
+        speed = GameObject.Find("SpawnManager").GetComponent<Spawner>().speed;
+        gameObject.transform.Translate (Vector3.down * Time.deltaTime * speed);
 
-		if (this.transform.position.y < -7) {
-			Destroy (this.gameObject);
+		if (transform.position.y < -7) {
+			Destroy (gameObject);
 		}
 	}
 
 	void OnTriggerEnter(Collider player) {
 		Destroy (player.gameObject);
+        score = GameObject.Find("Player").GetComponent<PlayerManager>().score;
+        PlayerPrefs.SetInt("Score", score);
+        SceneManager.LoadScene("Retry");
 	}
 }
