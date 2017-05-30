@@ -11,12 +11,14 @@ public class Spawner : MonoBehaviour {
     public float lastPos;
     public bool start;
     public float score;
+	public Animator fade;
 
     void Start() {
         start = false;
         speed = 3.5f;
         spawnRate = 0.5f;
         lastPos = 0;
+		fade.enabled = false;
     }
 
     void Update()
@@ -65,4 +67,8 @@ public class Spawner : MonoBehaviour {
             IncreaseRepeatRate();
         }
     }
+
+	public void FadeOut() {
+		fade.enabled = true;
+	}
 }
