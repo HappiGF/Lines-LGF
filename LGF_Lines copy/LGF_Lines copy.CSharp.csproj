@@ -76,11 +76,20 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CameraAspectRScript.cs" />
     <Compile Include="Assets\Scripts\Lines\LineManager.cs" />
     <Compile Include="Assets\Scripts\Lines\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Player\CircleCreator.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons.cs" />
     <Compile Include="Assets\Scripts\UI\MenuManager.cs" />
     <Compile Include="Assets\Scripts\UI\RetryManager.cs" />
     <Compile Include="Assets\Scripts\UI\Score.cs" />

@@ -7,11 +7,9 @@ public class MenuManager : MonoBehaviour {
 
     void Start()
     {
-        PlayerPrefs.SetInt("HighScore", 0);
-    }
-
-    public void PlayOnClick()
-    {
-        SceneManager.LoadScene("Lines_01");
+        if (!PlayerPrefs.HasKey("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", 0);
+        }
     }
 }

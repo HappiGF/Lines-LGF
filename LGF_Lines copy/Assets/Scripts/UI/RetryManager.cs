@@ -24,9 +24,4 @@ public class RetryManager : MonoBehaviour {
         HighScoreText.text = "High Score: " + highScore;
         PlayerPrefs.SetInt("HighScore", highScore);
     }
-
-    public void ReplayOnClick()
-    {
-        SceneManager.LoadScene("Lines_01");
-    }
 }

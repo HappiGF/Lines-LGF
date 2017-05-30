@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour {
     void Start()
     {
         center = transform.position;
+        RotateCClockwise();
         distance = 0;
         score = 0;
     }
@@ -30,8 +31,8 @@ public class PlayerManager : MonoBehaviour {
         }
 
         if (Input.touchCount > 0)
-        {
-            if (Input.GetTouch(Input.touches.Length - 1).position.x > 750)
+        { 
+            if (Input.GetTouch(Input.touches.Length - 1).position.x > Screen.width/2)
             {
                 RotateClockwise();
             }
@@ -43,13 +44,15 @@ public class PlayerManager : MonoBehaviour {
 
         if (distance >= 3.1f)
         {
-            distance = -0.02f;
+            distance = -0.04f;
             score += 1;
+            GameObject.Find("SpawnManager").GetComponent<Spawner>().ScoreUpdate(score);
         }
         else if (distance <= -3.1f)
         {
-            distance = 0.02f;
+            distance = 0.04f;
             score += 1;
+            GameObject.Find("SpawnManager").GetComponent<Spawner>().ScoreUpdate(score);
         }
     }
 
