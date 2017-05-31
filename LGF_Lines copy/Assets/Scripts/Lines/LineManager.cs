@@ -38,14 +38,13 @@ public class LineManager : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider player) {
-		Destroy (player.gameObject);
-		EndGame ();
-        
-	}
+        StartCoroutine(EndGame());
+        Destroy(player.gameObject);
+    }
 
 	IEnumerator EndGame() {
-		score = GameObject.Find("Player").GetComponent<PlayerManager>().score;
-		PlayerPrefs.SetInt("Score", score);
+        score = GameObject.Find("Player").GetComponent<PlayerManager>().score;
+        PlayerPrefs.SetInt("Score", score);
 		GameObject.Find ("SpawnManager").GetComponent<Spawner>().FadeOut();
 		yield return new WaitForSeconds (1);
 		SceneManager.LoadScene("Retry");
